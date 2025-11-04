@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { type } from "./../../../mobile/components/themed-view";
 
 const notificationSchema = new mongoose.Schema(
   {
@@ -29,7 +28,7 @@ const notificationSchema = new mongoose.Schema(
       default: null,
     },
   },
-  { timestamps }
+  { timestamps: true }
 );
 
 const Notification = mongoose.model("notification", notificationSchema);

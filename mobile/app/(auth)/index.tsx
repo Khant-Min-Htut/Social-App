@@ -6,14 +6,16 @@ import {
   ActivityIndicator,
 } from "react-native";
 import { ClerkProvider } from "@clerk/clerk-expo";
+import { useSocialAuth } from "@/hooks/useSocialAuth";
 
 export default function Index() {
-  const isLoading = false;
+  const { handleSocialAuth, isLoading } = useSocialAuth();
   return (
     <View className="flex-1 bg-white">
       <View className="flex-1 px-8 justify-between">
         <View className="flex-1 justify-center">
           {/* Demo image */}
+
           <View>
             <Image
               source={require("../../assets/images/auth2.png")}
@@ -24,7 +26,7 @@ export default function Index() {
           <View className="flex-col gap-2">
             <TouchableOpacity
               className="flex-row items-center justify-center bg-white border border-gray-300 rounded-full py-3 px-6"
-              onPress={() => {}}
+              onPress={() => handleSocialAuth("oauth_google")}
               disabled={isLoading}
               style={{
                 shadowColor: "#000",
@@ -51,7 +53,7 @@ export default function Index() {
             </TouchableOpacity>
             <TouchableOpacity
               className="flex-row items-center justify-center bg-white border border-gray-300 rounded-full py-3 px-6"
-              onPress={() => {}}
+              onPress={() => handleSocialAuth("oauth_apple")}
               disabled={isLoading}
               style={{
                 shadowColor: "#000",

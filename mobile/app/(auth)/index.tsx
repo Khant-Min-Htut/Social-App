@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   ActivityIndicator,
 } from "react-native";
-import { ClerkProvider } from "@clerk/clerk-expo";
+
 import { useSocialAuth } from "@/hooks/useSocialAuth";
 
 export default function Index() {
